@@ -66,6 +66,3 @@ This is my first complete web project. I'm currently learning front-end developm
 | 💼 | Aspiring Freelance Web Developer |
 | 🌐 | Currently learning: HTML, CSS, JS, C++ |
 
-<p align="center">
-  Built with ❤️ by <a href="https://github.com/zainsiddiqui4">Zain Ul Abideen</a> &nbsp;|&nbsp; First web project 🚀
-</p>
