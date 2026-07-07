@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Solar System</title>
+
+  <!-- Fonts: Unbounded for headings, Space Grotesk for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Unbounded:wght@500;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar">
+    <a class="logo" href="#top">SOLARIS</a>
+    <ul class="nav-links">
+      <li><a href="#planets">Planets</a></li>
+      <li><a href="#facts">Fun Facts</a></li>
+      <li><a href="#weight">Your Weight</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============ HERO with animated orbits ============ -->
+  <header class="hero" id="top">
+    <div class="stars" aria-hidden="true"></div>
+
+    <div class="hero-text">
+      <p class="eyebrow">A journey across 4.5 billion years</p>
+      <h1>Our Solar<br>System</h1>
+      <p class="hero-sub">One star, eight planets, hundreds of moons and a trillion frozen comets — all held together by gravity. Scroll down to meet the neighbours.</p>
+      <a class="btn" href="#planets">Explore the planets ↓</a>
+    </div>
+
+    <!-- The signature element: a living CSS orbit diagram -->
+    <div class="orbit-map" aria-hidden="true">
+      <div class="sun"></div>
+      <div class="orbit o1"><span class="planet p-mercury" data-target="mercury"></span></div>
+      <div class="orbit o2"><span class="planet p-venus"   data-target="venus"></span></div>
+      <div class="orbit o3"><span class="planet p-earth"   data-target="earth"></span></div>
+      <div class="orbit o4"><span class="planet p-mars"    data-target="mars"></span></div>
+      <div class="orbit o5"><span class="planet p-jupiter" data-target="jupiter"></span></div>
+      <div class="orbit o6"><span class="planet p-saturn"  data-target="saturn"></span></div>
+    </div>
+  </header>
+
+  <!-- ============ PLANET CARDS ============ -->
+  <main>
+    <section class="section" id="planets">
+      <h2 class="section-title">The Eight Planets</h2>
+      <p class="section-intro">In order of distance from the Sun. Click a planet in the sky above to jump straight to it.</p>
+
+      <div class="planet-grid">
+
+        <article class="card reveal" id="mercury">
+          <div class="card-globe globe-mercury"></div>
+          <h3>Mercury</h3>
+          <p class="card-tag">The Swift Planet</p>
+          <p>The smallest planet and the closest to the Sun. A year here lasts just 88 Earth days, but one day–night cycle takes 176 — so a day is longer than a year!</p>
+          <ul class="stats">
+            <li><span>Distance</span>58M km</li>
+            <li><span>Moons</span>0</li>
+            <li><span>Day temp</span>430°C</li>
+          </ul>
+        </article>
+
+        <article class="card reveal" id="venus">
+          <div class="card-globe globe-venus"></div>
+          <h3>Venus</h3>
+          <p class="card-tag">The Morning Star</p>
+          <p>The hottest planet in the solar system thanks to a runaway greenhouse effect. Its thick clouds of sulphuric acid trap heat like a giant oven.</p>
+          <ul class="stats">
+            <li><span>Distance</span>108M km</li>
+            <li><span>Moons</span>0</li>
+            <li><span>Surface</span>465°C</li>
+          </ul>
+        </article>
+
+        <article class="card reveal" id="earth">
+          <div class="card-globe globe-earth"></div>
+          <h3>Earth</h3>
+          <p class="card-tag">The Blue Marble</p>
+          <p>The only known world with life. About 71% of its surface is covered in liquid water, and its atmosphere shields us from harmful solar radiation.</p>
+          <ul class="stats">
+            <li><span>Distance</span>150M km</li>
+            <li><span>Moons</span>1</li>
+            <li><span>Age</span>4.5B yrs</li>
+          </ul>
+        </article>
+
+        <article class="card reveal" id="mars">
+          <div class="card-globe globe-mars"></div>
+          <h3>Mars</h3>
+          <p class="card-tag">The Red Planet</p>
+          <p>Rusty iron dust gives Mars its colour. It hosts Olympus Mons — the tallest volcano in the solar system, nearly three times the height of Mount Everest.</p>
+          <ul class="stats">
+            <li><span>Distance</span>228M km</li>
+            <li><span>Moons</span>2</li>
+            <li><span>Gravity</span>38% of Earth</li>
+          </ul>
+        </article>
+
+        <article class="card reveal" id="jupiter">
+          <div class="card-globe globe-jupiter"></div>
+          <h3>Jupiter</h3>
+          <p class="card-tag">The Giant</p>
+          <p>So massive that all other planets could fit inside it — twice over. Its Great Red Spot is a storm bigger than Earth that has raged for centuries.</p>
+          <ul class="stats">
+            <li><span>Distance</span>778M km</li>
+            <li><span>Moons</span>95</li>
+            <li><span>Day length</span>10 hrs</li>
+          </ul>
+        </article>
+
+        <article class="card reveal" id="saturn">
+          <div class="card-globe globe-saturn"><span class="ring"></span></div>
+          <h3>Saturn</h3>
+          <p class="card-tag">The Ringed Jewel</p>
+          <p>Its famous rings are made of billions of chunks of ice and rock, some as small as dust and some as big as houses. Saturn is so light it could float on water.</p>
+          <ul class="stats">
+            <li><span>Distance</span>1.4B km</li>
+            <li><span>Moons</span>146</li>
+            <li><span>Ring span</span>282,000 km</li>
+          </ul>
+        </article>
+
+        <article class="card reveal" id="uranus">
+          <div class="card-globe globe-uranus"></div>
+          <h3>Uranus</h3>
+          <p class="card-tag">The Sideways World</p>
+          <p>Uranus rolls around the Sun tipped over on its side, probably after a giant collision long ago. Each pole gets 42 years of sunlight, then 42 years of darkness.</p>
+          <ul class="stats">
+            <li><span>Distance</span>2.9B km</li>
+            <li><span>Moons</span>28</li>
+            <li><span>Tilt</span>98°</li>
+          </ul>
+        </article>
+
+        <article class="card reveal" id="neptune">
+          <div class="card-globe globe-neptune"></div>
+          <h3>Neptune</h3>
+          <p class="card-tag">The Windy Blue</p>
+          <p>The farthest planet, discovered by mathematics before it was ever seen through a telescope. Its winds scream at over 2,000 km/h — the fastest anywhere.</p>
+          <ul class="stats">
+            <li><span>Distance</span>4.5B km</li>
+            <li><span>Moons</span>16</li>
+            <li><span>Year</span>165 Earth yrs</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ FUN FACTS STRIP ============ -->
+    <section class="section facts" id="facts">
+      <h2 class="section-title">Did you know?</h2>
+      <div class="fact-strip">
+        <div class="fact reveal">
+          <p class="fact-number">99.8%</p>
+          <p>of the solar system's mass belongs to the Sun alone.</p>
+        </div>
+        <div class="fact reveal">
+          <p class="fact-number">8 min</p>
+          <p>is how long sunlight takes to reach Earth.</p>
+        </div>
+        <div class="fact reveal">
+          <p class="fact-number">1.3M</p>
+          <p>Earths could fit inside the Sun.</p>
+        </div>
+        <div class="fact reveal">
+          <p class="fact-number">-230°C</p>
+          <p>on Neptune's moon Triton — one of the coldest places known.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WEIGHT CALCULATOR (JS demo) ============ -->
+    <section class="section" id="weight">
+      <h2 class="section-title">How much would you weigh?</h2>
+      <p class="section-intro">Gravity is different on every planet. Type your weight on Earth and find out.</p>
+
+      <div class="calc reveal">
+        <div class="calc-input">
+          <input type="number" id="weightInput" placeholder="Your weight in kg" min="1" />
+          <button class="btn" id="calcBtn">Calculate</button>
+        </div>
+        <div class="calc-results" id="calcResults"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>SOLARIS — a first web project built with HTML, CSS &amp; JavaScript 🚀</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

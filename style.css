@@ -1,0 +1,437 @@
+/* =========================================================
+   SOLARIS — Solar System website
+   Palette:
+   --space   #060913  deep space background
+   --ink     #EAF0FF  star-white text
+   --gold    #FFC94D  sun gold (primary accent)
+   --rust    #E2643B  mars rust (secondary accent)
+   --haze    #1A2138  card / panel surface
+   ========================================================= */
+
+:root {
+  --space: #060913;
+  --ink:   #EAF0FF;
+  --gold:  #FFC94D;
+  --rust:  #E2643B;
+  --haze:  #141a2e;
+  --line:  rgba(234, 240, 255, 0.12);
+  --font-display: "Unbounded", sans-serif;
+  --font-body: "Space Grotesk", sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--space);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 6vw;
+  background: rgba(6, 9, 19, 0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  z-index: 100;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  font-size: 0.95rem;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible { opacity: 1; color: var(--gold); }
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 7rem 6vw 4rem;
+}
+
+/* twinkling star field made only with CSS gradients */
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 70% 15%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 85% 60%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 40% 75%, #fff 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 10% 85%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 55% 45%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 92% 88%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 30% 10%, #fff 50%, transparent 51%);
+  opacity: 0.5;
+  animation: twinkle 5s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to   { opacity: 0.7; }
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--rust);
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.4rem, 6vw, 4.8rem);
+  line-height: 1.05;
+  background: linear-gradient(120deg, var(--ink) 40%, var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-sub {
+  margin: 1.5rem 0 2rem;
+  max-width: 46ch;
+  opacity: 0.85;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--space);
+  background: var(--gold);
+  padding: 0.85rem 1.8rem;
+  border-radius: 100px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255, 201, 77, 0.35);
+}
+
+/* ---------- ORBIT MAP (the signature element) ---------- */
+.orbit-map {
+  position: relative;
+  width: min(42vw, 520px);
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.sun {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 12%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff2c8, var(--gold) 55%, #f28b1e);
+  box-shadow: 0 0 40px 12px rgba(255, 201, 77, 0.45);
+}
+
+/* each orbit is a ring; the planet sits on its top edge
+   and the whole ring spins, carrying the planet around */
+.orbit {
+  position: absolute;
+  top: 50%; left: 50%;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  animation: spin linear infinite;
+}
+
+.o1 { width: 26%; height: 26%; animation-duration: 8s;  }
+.o2 { width: 40%; height: 40%; animation-duration: 13s; }
+.o3 { width: 55%; height: 55%; animation-duration: 20s; }
+.o4 { width: 70%; height: 70%; animation-duration: 28s; }
+.o5 { width: 85%; height: 85%; animation-duration: 40s; }
+.o6 { width: 100%; height: 100%; animation-duration: 55s; }
+
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.planet {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.planet:hover { box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.15); }
+
+.p-mercury { background: #b9a292; width: 8px;  height: 8px;  }
+.p-venus   { background: #e8c47a; width: 11px; height: 11px; }
+.p-earth   { background: #4f8fd8; }
+.p-mars    { background: var(--rust); width: 11px; height: 11px; }
+.p-jupiter { background: #d9a066; width: 20px; height: 20px; }
+.p-saturn  { background: #e5cf9a; width: 17px; height: 17px; }
+
+/* ---------- SECTIONS ---------- */
+.section { padding: 6rem 6vw; }
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  margin-bottom: 0.6rem;
+}
+
+.section-intro {
+  opacity: 0.75;
+  max-width: 60ch;
+  margin-bottom: 3rem;
+}
+
+/* ---------- PLANET CARDS ---------- */
+.planet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--haze);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 2rem 1.6rem;
+  transition: transform 0.25s, border-color 0.25s;
+  scroll-margin-top: 6rem; /* so anchor jumps don't hide under the navbar */
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 201, 77, 0.4);
+}
+
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 0.15rem;
+}
+
+.card-tag {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.9rem;
+}
+
+.card p { font-size: 0.93rem; opacity: 0.9; }
+
+/* the little planet "globe" at the top of each card */
+.card-globe {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  margin-bottom: 1.3rem;
+  box-shadow: inset -14px -10px 24px rgba(0, 0, 0, 0.55);
+}
+
+.globe-mercury { background: radial-gradient(circle at 30% 30%, #cfc0b4, #7d6f63); }
+.globe-venus   { background: radial-gradient(circle at 30% 30%, #f4dca4, #c08a3e); }
+.globe-earth   { background: radial-gradient(circle at 30% 30%, #7db8ee, #1d5c9e 60%, #163f27); }
+.globe-mars    { background: radial-gradient(circle at 30% 30%, #f08a5f, #a03c1c); }
+.globe-jupiter { background: repeating-linear-gradient(175deg, #e0b184 0 10px, #b97f4e 10px 18px, #d9a066 18px 30px); }
+.globe-saturn  { background: radial-gradient(circle at 30% 30%, #f0dfae, #b99b5c); }
+.globe-uranus  { background: radial-gradient(circle at 30% 30%, #bdf1f2, #4ba6b2); }
+.globe-neptune { background: radial-gradient(circle at 30% 30%, #6f9bef, #23459c); }
+
+/* Saturn's ring */
+.ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 130%;
+  height: 26%;
+  border: 3px solid rgba(229, 207, 154, 0.8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-18deg);
+}
+
+/* stats row inside each card */
+.stats {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 1.3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.stats span {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+/* ---------- FUN FACTS ---------- */
+.facts { background: linear-gradient(180deg, transparent, rgba(255, 201, 77, 0.05), transparent); }
+
+.fact-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.fact {
+  border-left: 3px solid var(--rust);
+  padding-left: 1.2rem;
+}
+
+.fact-number {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.fact p:last-child { font-size: 0.92rem; opacity: 0.85; }
+
+/* ---------- WEIGHT CALCULATOR ---------- */
+.calc {
+  background: var(--haze);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 2rem;
+  max-width: 760px;
+}
+
+.calc-input {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.calc-input input {
+  flex: 1;
+  min-width: 200px;
+  background: var(--space);
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  padding: 0.85rem 1.4rem;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.calc-input input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.calc-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.calc-results .result {
+  background: var(--space);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  text-align: center;
+}
+
+.result strong {
+  display: block;
+  font-family: var(--font-display);
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+.result small { opacity: 0.7; }
+
+/* ---------- SCROLL REVEAL ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 6vw;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ---------- ACCESSIBILITY: stop motion if the user prefers ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .orbit, .stars { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 8rem;
+  }
+  .hero-sub { margin-inline: auto; }
+  .orbit-map { width: min(80vw, 380px); }
+  .nav-links { gap: 1.2rem; font-size: 0.85rem; }
+}
