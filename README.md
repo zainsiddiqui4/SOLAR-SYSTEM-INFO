@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-[View Website](https://zainsiddiqui4.github.io/solar-system](https://zainsiddiqui4.github.io/SOLAR-SYSTEM-INFO/)
+[View Website](https://zainsiddiqui4.github.io/SOLAR-SYSTEM-INFO/)
 
 ## About The Project
 
