@@ -8,13 +8,13 @@
 
 ---
 
-## 🌍 Live Demo
+## Live Demo
 
-🔗 [View Website](https://zainsiddiqui4.github.io/solar-system) *(update this link after deploying on GitHub Pages)*
+[View Website](https://zainsiddiqui4.github.io/solar-system) *(update this link after deploying on GitHub Pages)*
 
 ---
 
-## 📖 About The Project
+## About The Project
 
 SOLARIS is a single-page educational website that takes the visitor on a visual journey through our solar system. The entire site is built from scratch using only vanilla HTML, CSS, and JavaScript — no frameworks, no libraries, and no external images. Every planet globe, orbit ring, and animation is hand-crafted using pure CSS, which keeps the site lightweight and fast.
 
@@ -24,16 +24,16 @@ This project was built to practise and solidify the fundamentals of front-end we
 
 ## ✨ Features
 
-- **🌀 Animated Orbit Diagram** — A live hero section where all six inner planets orbit a glowing CSS sun at different speeds. Each planet is clickable and smoothly scrolls to its dedicated card.
-- **🪐 Planet Encyclopedia** — Individual cards for all eight planets with real facts, key statistics (distance from Sun, number of moons, temperature/gravity), and unique CSS-drawn planet globes.
-- **⚖️ Weight Calculator** — Enter your weight on Earth and instantly see what you would weigh on every planet, calculated using real surface gravity ratios.
-- **🎞️ Scroll-Reveal Animations** — Cards and facts fade in smoothly as you scroll, built with the native IntersectionObserver API.
-- **📱 Fully Responsive** — Adapts cleanly to mobile, tablet, and desktop screen sizes.
-- **♿ Accessibility-Friendly** — Respects `prefers-reduced-motion`, includes keyboard focus states, and uses semantic HTML throughout.
+- **Animated Orbit Diagram** — A live hero section where all six inner planets orbit a glowing CSS sun at different speeds. Each planet is clickable and smoothly scrolls to its dedicated card.
+- **Planet Encyclopedia** — Individual cards for all eight planets with real facts, key statistics (distance from Sun, number of moons, temperature/gravity), and unique CSS-drawn planet globes.
+- **Weight Calculator** — Enter your weight on Earth and instantly see what you would weigh on every planet, calculated using real surface gravity ratios.
+- **Scroll-Reveal Animations** — Cards and facts fade in smoothly as you scroll, built with the native IntersectionObserver API.
+- **Fully Responsive** — Adapts cleanly to mobile, tablet, and desktop screen sizes.
+- **Accessibility-Friendly** — Respects `prefers-reduced-motion`, includes keyboard focus states, and uses semantic HTML throughout.
 
 ---
 
-## 🛠️ Built With
+## Built With
 
 | Technology | Purpose |
 |---|---|
@@ -42,46 +42,6 @@ This project was built to practise and solidify the fundamentals of front-end we
 | JavaScript (ES5) | Interactivity, DOM manipulation, IntersectionObserver |
 
 No build tools, no npm, no dependencies. Clone and open.
-
----
-
-## 🚀 Getting Started
-
-### Run Locally
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/zainsiddiqui4/solar-system.git
-
-# 2. Navigate into the folder
-cd solar-system
-
-# 3. Open index.html in your browser
-# (double-click it, or use Live Server in VS Code)
-```
-
-### File Structure
-
-```
-solar-system/
-│
-├── index.html      # Main page structure
-├── style.css       # All styling and animations
-├── script.js       # Interactivity and calculator logic
-└── README.md       # You are here
-```
-
----
-
-## 📸 Screenshots
-
-> *(Add a screenshot of your hero section and planet cards here after the site is live)*
-
-| Hero Section | Planet Cards | Weight Calculator |
-|---|---|---|
-| ![Hero](#) | ![Cards](#) | ![Calc](#) |
-
----
 
 ## 🔭 What I Learned
 
@@ -93,19 +53,7 @@ solar-system/
 - DOM manipulation and event handling in plain JavaScript
 - How to deploy a static site and connect a custom domain
 
----
-
-## 🗺️ Future Improvements
-
-- [ ] Add the asteroid belt and dwarf planets (Pluto!)
-- [ ] Add a 3D solar system view using Three.js
-- [ ] Add a planet comparison tool (side-by-side stats)
-- [ ] Add background music with a toggle button
-- [ ] Translate into Urdu 🇵🇰
-
----
-
-## 👨‍💻 About Me
+## About Me
 
 Hi, I'm **Zain Ul Abideen** — a Computer Science student at **FAST NUCES, Chiniot-Faisalabad Campus** with a passion for web development and building things from scratch.
 
@@ -117,21 +65,6 @@ This is my first complete web project. I'm currently learning front-end developm
 | 📍 | Pakistan |
 | 💼 | Aspiring Freelance Web Developer |
 | 🌐 | Currently learning: HTML, CSS, JS, C++ |
-
----
-
-## 📬 Connect With Me
-
-[![GitHub](https://img.shields.io/badge/GitHub-zainsiddiqui4-181717?style=for-the-badge&logo=github)](https://github.com/zainsiddiqui4)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-zainsiddiqui1425-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/zainsiddiqui1425)
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
 
 <p align="center">
   Built with ❤️ by <a href="https://github.com/zainsiddiqui4">Zain Ul Abideen</a> &nbsp;|&nbsp; First web project 🚀
